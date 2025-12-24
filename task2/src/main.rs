@@ -1,27 +1,37 @@
 use std::fs::File;
-use std::collections::HashMap;
+use std::path::PathBuf;
 
 use anyhow;
 use clap::Parser;
 use walkdir::WalkDir;
-use std::fmt::Write as FmtWrite;
-use std::io::BufWriter;
 
-type Map = HashMap<String, HashMap<std::path::PathBuf, Vec<usize>>>;
+// Task2. Folder indexing: variants 1) HashMap and 2) BTreeMap
+// -----------------------------------------------------------
+//use std::collections::HashMap;
+//type Map = HashMap<String, HashMap<std::path::PathBuf, Vec<usize>>>;
+
+use std::collections::BTreeMap;
+type Map = BTreeMap<String, BTreeMap<std::path::PathBuf, Vec<usize>>>;
+
 
 static SEPARATORS: &[char; 4] = &[' ', ',', ';', '.'];
-fn index_folder(start_path: &String, depth: usize) -> Map {
-    let mut bigmap: Map = HashMap::new();
+fn index_folder(start_path: &PathBuf, depth: usize) -> Map {
+    let mut bigmap = Map::new();
+
+    if !start_path.exists() {
+        eprintln!("Error: '{}' does not exist", start_path.display());
+        return bigmap;
+    }
 
     for entry_res in WalkDir::new(start_path).max_depth(depth) {
         match entry_res {
             Ok(entry) => {
                 let path = entry.path();
                 let mut text_addr: usize = 0;
-                
+
                 if entry.file_type().is_file() {
-                    let file_conent = std::fs::read_to_string(path);
-                    match file_conent {
+                    let file_content = std::fs::read_to_string(path);
+                    match file_content {
                         Ok(file_cont) => {
                             text_addr = file_cont.as_ptr().addr();
 
@@ -29,20 +39,19 @@ fn index_folder(start_path: &String, depth: usize) -> Map {
                                 let word_address = word.as_ptr().addr();
                                 let offset = word_address - text_addr;
 
-                                bigmap
-                                .entry(String::from(word)).or_default()
-                                .entry(path.to_path_buf()).or_default().push(offset);
+                                bigmap.entry(String::from(word)).or_default()
+                                    .entry(path.to_path_buf()).or_default().push(offset);
                             }
                         }
-                        Err(err) => {
-                            eprintln!("Error: {}...", err);
+                        Err(_err) => {
+                            eprintln!("Error: {}...", _err);
                             continue;
                         }
                     }
                 }
             }
-            Err(err) => {
-                eprintln!("Error: {}...", err);
+            Err(_err) => {
+                eprintln!("Error: {}...", _err);
                 continue;
             }
         }
@@ -50,12 +59,20 @@ fn index_folder(start_path: &String, depth: usize) -> Map {
     return bigmap;
 }
 
+fn save_index_file(file_name: &PathBuf, map: Map)  -> anyhow::Result<()> {
+    let file = File::create(&file_name)?;
+    serde_json::to_writer_pretty(file, &map)?;
+    Ok(())
+}
+
 #[derive(Debug, Parser)]
 struct Args {
+    #[arg(short, long, default_value = "./result.txt")]
+    result: String,
     #[arg(short, long, default_value = ".")]
     folder: String,
-    #[arg(short, long)] //, default_value = 0)]
-    max_depth: Option<usize>,
+    #[arg(short, long, default_value_t = 0)]
+    max_depth: usize
 }
 
 fn main() -> anyhow::Result<()> {
@@ -67,57 +84,83 @@ fn main() -> anyhow::Result<()> {
         println!("  4) Save results in a resulting hash-map under key of file name");
         println!("  5) Save hash-map in a file");
     */
-    //arguments -- folder path, max depth
-    let args = Args::parse();
-    let depth: usize;
-    let start_path = args.folder.clone();
 
-    match args.max_depth {
-        Some(max_depth) => depth = max_depth,
-        None => depth = 0,
+    let args                 = Args::parse();
+    let start_path:  PathBuf = args.folder.clone().into();
+    let result_path: PathBuf = args.result.clone().into();
+    let max_depth:     usize =
+        if args.max_depth == 0 {
+            usize::MAX
+        } else {
+            args.max_depth
+        };
+
+    let map: Map = index_folder(&start_path, max_depth);
+    let result = save_index_file(&result_path, map);
+    match result {
+        Ok(res) => {
+            println!("Files in folder {:?} are indexed as {:?}", start_path, result_path);
+        }
+        Err(_err) => {
+            eprintln!("Error: {}...", _err);
+        }
     }
 
-    let  map: Map = index_folder(&start_path, depth);
-    let mut file = File::create("result.txt")?;
-    let writer = BufWriter::new(file);
-    serde_json::to_writer_pretty(writer, &map)?;
-
-    println!("Folder {start_path} is indexed");
     println!("Good bye!");
     Ok(())
 }
 
+/*
 #[test]
-fn test_long() {
-    let map = index_string(
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    );
-    assert_eq!(map["Lorem"].len(), 1);
+fn test_index_single_file() {
+    match std::fs::create_dir("./test/") {
+        Err(_err) => { eprintln!("Error: {}...", _err);
+                         assert!(false, "Error: create folder") }
+         Ok(_res) => {}
+    }
+    match std::fs::copy("./test_data/lorem1", "./test/file") {
+        Err(_err) => { eprintln!("Error: {}...", _err);
+                         assert!(false, "Error: copy file") }
+         Ok(_res) => {}
+    }
+
+    let map = index_folder(&PathBuf::from("./test/"), 0);
+    assert_ne!(map.len(), 0);
+    assert_eq!(map["Lorem"].len(), 2);
     assert_eq!(map["dolor"].len(), 2);
-    assert_eq!(map["dolore"].len(), 2);
+    assert_eq!(map["ipsum"].len(), 2);
+    assert_eq!(map["dolore"].len(), 0);
+
+    match std::fs::remove_file("./test/lorem1") {
+        Err(_err) => { eprintln!("Error: {}...", _err);
+                         assert!(false, "Error: remove file") }
+         Ok(_res) => {}
+    }
+    match std::fs::remove_dir("./test/") {
+        Err(_err) => { eprintln!("Error: {}...", _err);
+                         assert!(false, "Error: remove folder") }
+         Ok(_res) => {}
+    }
+}*/
+
+#[test]
+fn test_index_many_files_no_folder_depth() {
+    let map = index_folder(&PathBuf::from("./test_data/"), 1);
+    println!("map {:#?}", map);
+
+    assert_eq!(map["Lorem"].len(), 2);
+    assert_eq!(map["dolor"].len(), 2);
+    assert_eq!(map["ipsum"].len(), 2);
+    assert_eq!(map.contains_key("dolore"), false);
 }
 
 #[test]
-fn test_long_from_file() {
-    let file_content = std::fs::read_to_string("test_data/lorem1");
-    let data = file_content.unwrap();
-    let map = index_string(data.as_str());
-    assert_eq!(map["Lorem"].len(), 1);
-    assert_eq!(map["dolor"].len(), 2);
-    assert_eq!(map["dolore"].len(), 2);
-}
+fn test_index_many_files_with_folder_depth() {
+    let map = index_folder(&PathBuf::from("./test_data/"), 4);
+    println!("map {:#?}", map);
 
-#[test]
-fn test_long_from_file2() {
-    let file_content1 = std::fs::read_to_string("test_data/lorem1");
-    let data1 = file_content1.unwrap();
-    let map1 = index_string(data1.as_str());
-    let file_content2 = std::fs::read_to_string("test_data/lorem2");
-    let data2 = file_content2.unwrap();
-    let map2 = index_string(data2.as_str());
-    assert_eq!(map1.len(), map2.len());
-    assert_eq!(map1.contains_key("dolor"), true);
-    assert_eq!(map2.contains_key("dolor"), true);
-    assert_eq!(map1["dolor"].len(), 2);
-    assert_eq!(map2["dolor"].len(), 2);
+    assert_eq!(map["Lorem"].len(), 7);
+    assert_eq!(map["dolor"].len(), 7);
+    assert_eq!(map["ipsum"].len(), 7);
+    assert_eq!(map["dolore"].len(), 2);
 }

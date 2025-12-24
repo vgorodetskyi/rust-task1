@@ -1,0 +1,591 @@
+{
+  "": {
+    "test_data/sub1/sub2/sub3/lorem1.orig": [
+      27,
+      56,
+      123,
+      148,
+      231,
+      334,
+      382,
+      445
+    ],
+    "test_data/sub1/sub2/sub3/lorem2.orig": [
+      27,
+      56,
+      123,
+      148,
+      231,
+      334,
+      382,
+      445
+    ]
+  },
+  "Duis": {
+    "test_data/sub1/sub2/sub3/lorem1.orig": [
+      232
+    ],
+    "test_data/sub1/sub2/sub3/lorem2.orig": [
+      232
+    ]
+  },
+  "Excepteur": {
+    "test_data/sub1/sub2/sub3/lorem1.orig": [
+      335
+    ],
+    "test_data/sub1/sub2/sub3/lorem2.orig": [
+      335
+    ]
+  },
+  "Lorem": {
+    "test_data/lorem1": [
+      0
+    ],
+    "test_data/lorem2": [
+      0
+    ],
+    "test_data/sub1/lorem3": [
+      0
+    ],
+    "test_data/sub1/lorem4": [
+      0
+    ],
+    "test_data/sub1/sub2/lorem5": [
+      0
+    ],
+    "test_data/sub1/sub2/sub3/lorem1.orig": [
+      0
+    ],
+    "test_data/sub1/sub2/sub3/lorem2.orig": [
+      0
+    ]
+  },
+  "Ut": {
+    "test_data/sub1/sub2/sub3/lorem1.orig": [
+      124
+    ],
+    "test_data/sub1/sub2/sub3/lorem2.orig": [
+      124
+    ]
+  },
+  "ad": {
+    "test_data/sub1/sub2/sub3/lorem1.orig": [
+      132
+    ],
+    "test_data/sub1/sub2/sub3/lorem2.orig": [
+      132
+    ]
+  },
+  "adipiscing": {
+    "test_data/sub1/sub2/sub3/lorem1.orig": [
+      40
+    ],
+    "test_data/sub1/sub2/sub3/lorem2.orig": [
+      40
+    ]
+  },
+  "aliqua": {
+    "test_data/sub1/sub2/sub3/lorem1.orig": [
+      116
+    ],
+    "test_data/sub1/sub2/sub3/lorem2.orig": [
+      116
+    ]
+  },
+  "aliquip": {
+    "test_data/sub1/sub2/sub3/lorem1.orig": [
+      199
+    ],
+    "test_data/sub1/sub2/sub3/lorem2.orig": [
+      199
+    ]
+  },
+  "amet": {
+    "test_data/sub1/sub2/sub3/lorem1.orig": [
+      22
+    ],
+    "test_data/sub1/sub2/sub3/lorem2.orig": [
+      22
+    ]
+  },
+  "anim": {
+    "test_data/sub1/sub2/sub3/lorem1.orig": [
+      425
+    ],
+    "test_data/sub1/sub2/sub3/lorem2.orig": [
+      425
+    ]
+  },
+  "aute": {
+    "test_data/sub1/sub2/sub3/lorem1.orig": [
+      237
+    ],
+    "test_data/sub1/sub2/sub3/lorem2.orig": [
+      237
+    ]
+  },
+  "cillum": {
+    "test_data/sub1/sub2/sub3/lorem1.orig": [
+      295
+    ],
+    "test_data/sub1/sub2/sub3/lorem2.orig": [
+      295
+    ]
+  },
+  "commodo": {
+    "test_data/sub1/sub2/sub3/lorem1.orig": [
+      213
+    ],
+    "test_data/sub1/sub2/sub3/lorem2.orig": [
+      213
+    ]
+  },
+  "consectetur": {
+    "test_data/sub1/sub2/sub3/lorem1.orig": [
+      28
+    ],
+    "test_data/sub1/sub2/sub3/lorem2.orig": [
+      28
+    ]
+  },
+  "consequat": {
+    "test_data/sub1/sub2/sub3/lorem1.orig": [
+      221
+    ],
+    "test_data/sub1/sub2/sub3/lorem2.orig": [
+      221
+    ]
+  },
+  "culpa": {
+    "test_data/sub1/sub2/sub3/lorem1.orig": [
+      391
+    ],
+    "test_data/sub1/sub2/sub3/lorem2.orig": [
+      391
+    ]
+  },
+  "cupidatat": {
+    "test_data/sub1/sub2/sub3/lorem1.orig": [
+      359
+    ],
+    "test_data/sub1/sub2/sub3/lorem2.orig": [
+      359
+    ]
+  },
+  "deserunt": {
+    "test_data/sub1/sub2/sub3/lorem1.orig": [
+      409
+    ],
+    "test_data/sub1/sub2/sub3/lorem2.orig": [
+      409
+    ]
+  },
+  "do": {
+    "test_data/sub1/sub2/sub3/lorem1.orig": [
+      61
+    ],
+    "test_data/sub1/sub2/sub3/lorem2.orig": [
+      61
+    ]
+  },
+  "dolor": {
+    "test_data/lorem1": [
+      12
+    ],
+    "test_data/lorem2": [
+      12
+    ],
+    "test_data/sub1/lorem3": [
+      12
+    ],
+    "test_data/sub1/lorem4": [
+      12
+    ],
+    "test_data/sub1/sub2/lorem5": [
+      12
+    ],
+    "test_data/sub1/sub2/sub3/lorem1.orig": [
+      12,
+      248
+    ],
+    "test_data/sub1/sub2/sub3/lorem2.orig": [
+      12,
+      248
+    ]
+  },
+  "dolore": {
+    "test_data/sub1/sub2/sub3/lorem1.orig": [
+      103,
+      302
+    ],
+    "test_data/sub1/sub2/sub3/lorem2.orig": [
+      103,
+      302
+    ]
+  },
+  "ea": {
+    "test_data/sub1/sub2/sub3/lorem1.orig": [
+      210
+    ],
+    "test_data/sub1/sub2/sub3/lorem2.orig": [
+      210
+    ]
+  },
+  "eiusmod": {
+    "test_data/sub1/sub2/sub3/lorem1.orig": [
+      64
+    ],
+    "test_data/sub1/sub2/sub3/lorem2.orig": [
+      64
+    ]
+  },
+  "elit": {
+    "test_data/sub1/sub2/sub3/lorem1.orig": [
+      51
+    ],
+    "test_data/sub1/sub2/sub3/lorem2.orig": [
+      51
+    ]
+  },
+  "enim": {
+    "test_data/sub1/sub2/sub3/lorem1.orig": [
+      127
+    ],
+    "test_data/sub1/sub2/sub3/lorem2.orig": [
+      127
+    ]
+  },
+  "esse": {
+    "test_data/sub1/sub2/sub3/lorem1.orig": [
+      290
+    ],
+    "test_data/sub1/sub2/sub3/lorem2.orig": [
+      290
+    ]
+  },
+  "est": {
+    "test_data/sub1/sub2/sub3/lorem1.orig": [
+      433
+    ],
+    "test_data/sub1/sub2/sub3/lorem2.orig": [
+      433
+    ]
+  },
+  "et": {
+    "test_data/sub1/sub2/sub3/lorem1.orig": [
+      100
+    ],
+    "test_data/sub1/sub2/sub3/lorem2.orig": [
+      100
+    ]
+  },
+  "eu": {
+    "test_data/sub1/sub2/sub3/lorem1.orig": [
+      309
+    ],
+    "test_data/sub1/sub2/sub3/lorem2.orig": [
+      309
+    ]
+  },
+  "ex": {
+    "test_data/sub1/sub2/sub3/lorem1.orig": [
+      207
+    ],
+    "test_data/sub1/sub2/sub3/lorem2.orig": [
+      207
+    ]
+  },
+  "exercitation": {
+    "test_data/sub1/sub2/sub3/lorem1.orig": [
+      162
+    ],
+    "test_data/sub1/sub2/sub3/lorem2.orig": [
+      162
+    ]
+  },
+  "fugiat": {
+    "test_data/sub1/sub2/sub3/lorem1.orig": [
+      312
+    ],
+    "test_data/sub1/sub2/sub3/lorem2.orig": [
+      312
+    ]
+  },
+  "id": {
+    "test_data/sub1/sub2/sub3/lorem1.orig": [
+      430
+    ],
+    "test_data/sub1/sub2/sub3/lorem2.orig": [
+      430
+    ]
+  },
+  "in": {
+    "test_data/sub1/sub2/sub3/lorem1.orig": [
+      254,
+      271,
+      388
+    ],
+    "test_data/sub1/sub2/sub3/lorem2.orig": [
+      254,
+      271,
+      388
+    ]
+  },
+  "incididunt": {
+    "test_data/sub1/sub2/sub3/lorem1.orig": [
+      79
+    ],
+    "test_data/sub1/sub2/sub3/lorem2.orig": [
+      79
+    ]
+  },
+  "ipsum": {
+    "test_data/lorem1": [
+      6
+    ],
+    "test_data/lorem2": [
+      6
+    ],
+    "test_data/sub1/lorem3": [
+      6
+    ],
+    "test_data/sub1/lorem4": [
+      6
+    ],
+    "test_data/sub1/sub2/lorem5": [
+      6
+    ],
+    "test_data/sub1/sub2/sub3/lorem1.orig": [
+      6
+    ],
+    "test_data/sub1/sub2/sub3/lorem2.orig": [
+      6
+    ]
+  },
+  "irure": {
+    "test_data/sub1/sub2/sub3/lorem1.orig": [
+      242
+    ],
+    "test_data/sub1/sub2/sub3/lorem2.orig": [
+      242
+    ]
+  },
+  "labore": {
+    "test_data/sub1/sub2/sub3/lorem1.orig": [
+      93
+    ],
+    "test_data/sub1/sub2/sub3/lorem2.orig": [
+      93
+    ]
+  },
+  "laboris": {
+    "test_data/sub1/sub2/sub3/lorem1.orig": [
+      183
+    ],
+    "test_data/sub1/sub2/sub3/lorem2.orig": [
+      183
+    ]
+  },
+  "laborum": {
+    "test_data/sub1/sub2/sub3/lorem1.orig": [
+      437
+    ],
+    "test_data/sub1/sub2/sub3/lorem2.orig": [
+      437
+    ]
+  },
+  "magna": {
+    "test_data/sub1/sub2/sub3/lorem1.orig": [
+      110
+    ],
+    "test_data/sub1/sub2/sub3/lorem2.orig": [
+      110
+    ]
+  },
+  "minim": {
+    "test_data/sub1/sub2/sub3/lorem1.orig": [
+      135
+    ],
+    "test_data/sub1/sub2/sub3/lorem2.orig": [
+      135
+    ]
+  },
+  "mollit": {
+    "test_data/sub1/sub2/sub3/lorem1.orig": [
+      418
+    ],
+    "test_data/sub1/sub2/sub3/lorem2.orig": [
+      418
+    ]
+  },
+  "nisi": {
+    "test_data/sub1/sub2/sub3/lorem1.orig": [
+      191
+    ],
+    "test_data/sub1/sub2/sub3/lorem2.orig": [
+      191
+    ]
+  },
+  "non": {
+    "test_data/sub1/sub2/sub3/lorem1.orig": [
+      369
+    ],
+    "test_data/sub1/sub2/sub3/lorem2.orig": [
+      369
+    ]
+  },
+  "nostrud": {
+    "test_data/sub1/sub2/sub3/lorem1.orig": [
+      154
+    ],
+    "test_data/sub1/sub2/sub3/lorem2.orig": [
+      154
+    ]
+  },
+  "nulla": {
+    "test_data/sub1/sub2/sub3/lorem1.orig": [
+      319
+    ],
+    "test_data/sub1/sub2/sub3/lorem2.orig": [
+      319
+    ]
+  },
+  "occaecat": {
+    "test_data/sub1/sub2/sub3/lorem1.orig": [
+      350
+    ],
+    "test_data/sub1/sub2/sub3/lorem2.orig": [
+      350
+    ]
+  },
+  "officia": {
+    "test_data/sub1/sub2/sub3/lorem1.orig": [
+      401
+    ],
+    "test_data/sub1/sub2/sub3/lorem2.orig": [
+      401
+    ]
+  },
+  "pariatur": {
+    "test_data/sub1/sub2/sub3/lorem1.orig": [
+      325
+    ],
+    "test_data/sub1/sub2/sub3/lorem2.orig": [
+      325
+    ]
+  },
+  "proident": {
+    "test_data/sub1/sub2/sub3/lorem1.orig": [
+      373
+    ],
+    "test_data/sub1/sub2/sub3/lorem2.orig": [
+      373
+    ]
+  },
+  "qui": {
+    "test_data/sub1/sub2/sub3/lorem1.orig": [
+      397
+    ],
+    "test_data/sub1/sub2/sub3/lorem2.orig": [
+      397
+    ]
+  },
+  "quis": {
+    "test_data/sub1/sub2/sub3/lorem1.orig": [
+      149
+    ],
+    "test_data/sub1/sub2/sub3/lorem2.orig": [
+      149
+    ]
+  },
+  "reprehenderit": {
+    "test_data/sub1/sub2/sub3/lorem1.orig": [
+      257
+    ],
+    "test_data/sub1/sub2/sub3/lorem2.orig": [
+      257
+    ]
+  },
+  "sed": {
+    "test_data/sub1/sub2/sub3/lorem1.orig": [
+      57
+    ],
+    "test_data/sub1/sub2/sub3/lorem2.orig": [
+      57
+    ]
+  },
+  "sint": {
+    "test_data/sub1/sub2/sub3/lorem1.orig": [
+      345
+    ],
+    "test_data/sub1/sub2/sub3/lorem2.orig": [
+      345
+    ]
+  },
+  "sit": {
+    "test_data/sub1/sub2/sub3/lorem1.orig": [
+      18
+    ],
+    "test_data/sub1/sub2/sub3/lorem2.orig": [
+      18
+    ]
+  },
+  "sunt": {
+    "test_data/sub1/sub2/sub3/lorem1.orig": [
+      383
+    ],
+    "test_data/sub1/sub2/sub3/lorem2.orig": [
+      383
+    ]
+  },
+  "tempor": {
+    "test_data/sub1/sub2/sub3/lorem1.orig": [
+      72
+    ],
+    "test_data/sub1/sub2/sub3/lorem2.orig": [
+      72
+    ]
+  },
+  "ullamco": {
+    "test_data/sub1/sub2/sub3/lorem1.orig": [
+      175
+    ],
+    "test_data/sub1/sub2/sub3/lorem2.orig": [
+      175
+    ]
+  },
+  "ut": {
+    "test_data/sub1/sub2/sub3/lorem1.orig": [
+      90,
+      196
+    ],
+    "test_data/sub1/sub2/sub3/lorem2.orig": [
+      90,
+      196
+    ]
+  },
+  "velit": {
+    "test_data/sub1/sub2/sub3/lorem1.orig": [
+      284
+    ],
+    "test_data/sub1/sub2/sub3/lorem2.orig": [
+      284
+    ]
+  },
+  "veniam": {
+    "test_data/sub1/sub2/sub3/lorem1.orig": [
+      141
+    ],
+    "test_data/sub1/sub2/sub3/lorem2.orig": [
+      141
+    ]
+  },
+  "voluptate": {
+    "test_data/sub1/sub2/sub3/lorem1.orig": [
+      274
+    ],
+    "test_data/sub1/sub2/sub3/lorem2.orig": [
+      274
+    ]
+  }
+}
