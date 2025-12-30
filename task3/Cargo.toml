@@ -1,0 +1,12 @@
+[package]
+name = "task3"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+anyhow = "1.0.100"
+clap = { version = "4.5.53", features = ["derive"] }
+walkdir = "2.5.0"
+serde_json = "1.0.147"
+crossbeam-channel = "0.5.12"
+threadpool = "1.8.1"
